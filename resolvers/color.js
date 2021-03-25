@@ -10,6 +10,7 @@ const colorResolvers = {
     RED: "#f00",
     GREEN: "#0f0",
     BLUE: "#00f",
+    YELLOW: "#000",
   },
 
   Query: {

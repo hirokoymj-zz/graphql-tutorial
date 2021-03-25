@@ -8,6 +8,7 @@ const rootTypeDefs = `
     RED
     GREEN
     BLUE
+    YELLOW
   }
 `;
 

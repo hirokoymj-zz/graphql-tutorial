@@ -1,5 +1,26 @@
 # Node.js and GraphQL Template
 
+## Set up nodemon
+
+1. Install and set up nodemon in scripts.
+
+```js
+  "scripts": {
+    "serve": "nodemon index.js --exec babel-node index.js"
+  },
+```
+
+2. Run script
+
+```js
+npm run serve
+```
+
+**References:**
+
+- https://www.npmjs.com/package/nodemon
+- https://stackoverflow.com/questions/52674608/babel-transpiler-failing-to-run-with-nodemon/52702670#52702670
+
 ## Installed packages
 
 [03/25/2021]
@@ -46,3 +67,4 @@ npm install --save express apollo-server-express graphql graphql-tools graphql-t
 ### References;
 
 https://www.toptal.com/graphql/creating-your-first-graphql-api
+https://www.graphql-tools.com/docs/generate-schema/

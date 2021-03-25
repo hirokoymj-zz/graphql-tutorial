@@ -1,6 +1,5 @@
 import gql from "graphql-tag";
 import express from "express";
-// import { ApolloServer, makeExecutableSchema } from "apollo-server-express";
 import { ApolloServer } from "apollo-server-express";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 
@@ -8,8 +7,6 @@ import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
 
 const port = process.env.PORT || 8080;
-
-// Define APIs using GraphQL SDL
 
 // Configure express
 const app = express();
@@ -21,10 +18,10 @@ const schema = makeExecutableSchema({
 });
 
 // Build Apollo server
-const apolloServer = new ApolloServer({ schema });
+const apolloServer = new ApolloServer({ schema, uploads: false });
 apolloServer.applyMiddleware({ app });
 
-// Run server
+// // Run server
 app.listen({ port }, () => {
   console.log(
     `🚀Server ready at http://localhost:${port}${apolloServer.graphqlPath}`
