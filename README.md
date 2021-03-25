@@ -1,4 +1,4 @@
-# Node.js and GraphQl Template
+# Node.js and GraphQL Template
 
 ## Installed packages
 
