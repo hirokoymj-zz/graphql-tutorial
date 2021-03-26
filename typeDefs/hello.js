@@ -1,10 +1,15 @@
 const helloTypeDefs = `
+  type File {
+    url: String!
+  }  
+
   type Query {
     sayHello(name: String!): String!
+    hello: String!
   }
 
   type Mutation {
-    sayHello(name: String!): String!
+    uploadFile(file: Upload!): File!
   }
 `;
 

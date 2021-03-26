@@ -6,7 +6,7 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 
 // Configure express
 const app = express();
