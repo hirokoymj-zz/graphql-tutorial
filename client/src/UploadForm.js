@@ -10,14 +10,8 @@ const UPLOAD_FILE = gql`
 `;
 
 const SAY_HELLO = gql`
-  query sayHello($name: String!) {
+  mutation SayHello {
     sayHello(name: $name)
-  }
-`;
-
-const HELLO = gql`
-  query hello {
-    hello
   }
 `;
 
@@ -25,11 +19,7 @@ export default function UploadForm() {
   const [uploadFile] = useMutation(UPLOAD_FILE, {
     onCompleted: (data) => console.log(data),
   });
-
-  const { data, loading, error } = useQuery(HELLO);
-  console.log(loading);
-
-  if (!loading) console.log(data);
+  const [sayHello] = useMutation(SAY_HELLO);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -37,10 +27,17 @@ export default function UploadForm() {
     uploadFile({ variables: { file } });
   };
 
+  const handleClick = (e) => {
+    console.log("handleClick");
+    e.preventDefault();
+    sayHello({ variables: { name: "DAISUKE" } });
+  };
+
   return (
     <div>
       <h1>Upload File</h1>
       <input type="file" onChange={handleFileChange} />
+      <button onClick={handleClick}>say hello</button>
     </div>
   );
 }

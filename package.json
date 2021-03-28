@@ -25,6 +25,7 @@
     "graphql-scalars": "^1.9.0",
     "graphql-tag": "^2.12.3",
     "graphql-tools": "^7.0.4",
-    "graphql-upload": "^11.0.0"
+    "graphql-upload": "^11.0.0",
+    "uuid": "^8.3.2"
   }
 }

@@ -6,17 +6,17 @@ const helloResolvers = {
   Upload: GraphQLUpload,
 
   Query: {
-    sayHello: (obj, args, context, info) => {
-      console.log(args.name);
-      return `Hello ${args.name}!`;
-    },
+    // sayHello: (obj, args, context, info) => {
+    //   console.log(args.name2);
+    //   return `Hello ${args.name}!`;
+    // },
     hello: () => "Hello World",
   },
 
   Mutation: {
-    // sayHello: (obj, args, context, info) => {
-    //   return `Hello ${args.name}!`;
-    // },
+    sayHello: (obj, args, context, info) => {
+      return `Hello ${args.name}!`;
+    },
     uploadFile: async (parent, { file }) => {
       const { createReadStream, filename, mimetype, encoding } = await file;
       const stream = createReadStream();
